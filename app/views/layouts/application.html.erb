@@ -11,6 +11,8 @@
   </head>
 
   <body>
+    <p class="notice p-3"><%= notice %></p>
+    <p class="alert p-3"><%= alert %></p>
     <ul>
       <% if user_signed_in? %>
         <li><%= link_to 'My Recipes', my_recipes_path %> </li>
