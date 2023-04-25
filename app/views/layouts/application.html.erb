@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to 'My Recipes', my_recipes_path %> </li>
+        <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
