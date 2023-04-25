@@ -3,7 +3,7 @@
 <ul>
   <% @recipes.each do |recipe| %>
     <li>
-      <%= link_to recipe.name, recipe %>
+      <%= link_to recipe.name, recipe_path(recipe.id) %>
       <p><%= recipe.description %></p>
       <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" } %>
     </li>
