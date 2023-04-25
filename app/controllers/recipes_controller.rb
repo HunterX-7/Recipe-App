@@ -17,18 +17,20 @@ class RecipesController < ApplicationController
 
     def create 
         @recipe = current_user.recipes.new(recipe_params)
-        if @recipe.save 
-            redirect_to @recipe, notice: 'Recipe was successfully created'
-        else 
-            render :new
+        respond_to do |f|
+            if @recipe.save 
+               f.html {redirect_to my_recipes_path, notice: 'Recipe was successfully created'}
+            else 
+               f.html {render :new}
+            end
         end
     end
 
     def destroy
-        @recipe = Recipe.find(params[:id])
-        authorize @recipe
-        @recipe.destroy
-        redirect_to recipes_url, notice: 'Recipe was successfully destroyed'
+        @recipe = Recipe.find(params[:id]).destroy
+        respond_to do |f|
+            f.html {redirect_to my_recipes_path, notice: 'Recipe was successfully destroyed'}
+        end
     end
 
     def my_recipes
