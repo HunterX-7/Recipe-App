@@ -3,3 +3,5 @@
 <h2>Cooking time: <%=@recipe.cooking_time%></h2>
 <h3>Public <%= check_box_tag "public", "1", @recipe.public %></h3>
 <h3>Steps go here: <p><%=@recipe.description%></p></h3>
+
+<%= link_to "Add Food", new_food_path, class: "btn btn-success my-3" %>
