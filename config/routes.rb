@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   #  root "users#index"
   root "recipes#my_recipes"
   get 'my-recipes', to: 'recipes#my_recipes'
+  get 'my-foods', to: 'foods#my_foods'
   resources :recipes
+  resources :foods
 end
