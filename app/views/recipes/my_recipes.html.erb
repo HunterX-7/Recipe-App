@@ -4,7 +4,7 @@
   <% @recipes.each do |recipe| %>
     <li>
       <%= link_to recipe.name, recipe_path(recipe.id) %>
-      <p><%= recipe.description %></p>
+      <p>Description: <%= recipe.description %></p>
       <%= button_to "Remove", recipe, method: :delete, data: { turbo_confirm: "Are you sure you want to delete this recipe?" } %>
     </li>
   <% end %>
