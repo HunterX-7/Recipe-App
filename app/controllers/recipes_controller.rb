@@ -46,6 +46,33 @@ class RecipesController < ApplicationController
     redirect_to @recipe
   end
 
+  def shopping_list
+    @recipe = Recipe.find(params[:id])
+    @recipe_foods = RecipeFood.where(recipe_id: @recipe.id)
+  
+    @shopping_list = {}
+    @total_items = 0
+    @total_price = 0
+  
+    @recipe_foods.each do |recipe_food|
+      food = Food.find(recipe_food.food_id)
+      quantity = recipe_food.quantity
+      measurement_unit = food.measurement_unit
+  
+      if @shopping_list[food.name].nil?
+        @shopping_list[food.name] = { quantity: quantity, measurement_unit: measurement_unit, price: food.price * quantity , name: food.name, price: food.price }
+      else
+        @shopping_list[food.name][:quantity] += quantity
+        @shopping_list[food.name][:price] += food.price * quantity
+      end
+  
+      @total_items += quantity
+      @total_price += food.price * quantity
+    end
+    render "shopping_lists/index"
+  end
+  
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
