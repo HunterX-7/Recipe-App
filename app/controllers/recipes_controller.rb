@@ -40,6 +40,12 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where(public: true)
   end
 
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to @recipe
+  end
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
