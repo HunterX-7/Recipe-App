@@ -5,7 +5,6 @@
       <th>Name</th>
       <th>Quantity</th>
       <th>Price</th>
-      <th>Total Price</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +13,6 @@
         <td><%= food %></td>
         <td><%= details[:quantity] %></td>
         <td><%= number_to_currency(details[:price]) %></td>
-        <td><%= number_to_currency(details[:quantity] * details[:price]) %></td>
       </tr>
     <% end %>
     <tr>

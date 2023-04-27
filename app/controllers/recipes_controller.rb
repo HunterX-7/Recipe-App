@@ -61,7 +61,7 @@ class RecipesController < ApplicationController
 
       if @shopping_list[food.name].nil?
         @shopping_list[food.name] =
-          { quantity:, measurement_unit:, price: food.price * quantity, name: food.name, price: food.price }
+          { quantity:, measurement_unit:, price: food.price * quantity, name: food.name}
       else
         @shopping_list[food.name][:quantity] += quantity
         @shopping_list[food.name][:price] += food.price * quantity
