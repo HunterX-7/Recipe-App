@@ -33,11 +33,11 @@ class RecipesController < ApplicationController
   end
 
   def my_recipes
-    @recipes = current_user.recipes
+    @recipes = current_user.recipes.includes(:user)
   end
 
   def public_recipes
-    @recipes = Recipe.where(public: true)
+    @recipes = Recipe.includes(:user).where(public: true)
   end
 
   def toggle_public

@@ -33,7 +33,7 @@ class FoodsController < ApplicationController
   end
 
   def my_foods
-    @foods = current_user.foods
+    @foods = current_user.foods.includes(:user)
   end
 
   def food_params
