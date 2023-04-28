@@ -4,7 +4,8 @@ RSpec.describe Recipe, type: :model do
   before(:each) do
     @user = User.create(name: 'francisco', email: 'francisco@gmail.com', encrypted_password: '123456')
     @food = Food.new(name: 'mango', measurement_unit: 'lbs', price: 1, quantity: 5, user: @user)
-    @recipe = Recipe.new(user: @user, name: 'Lasagna', description: 'Steps to make great Lasagna', preparation_time: 60, cooking_time: 45, public: true)
+    @recipe = Recipe.new(user: @user, name: 'Lasagna', description: 'Steps to make great Lasagna',
+                         preparation_time: 60, cooking_time: 45, public: true)
     @recipe_food = RecipeFood.new(quantity: 1, recipe: @recipe, food: @food)
   end
 
@@ -42,7 +43,7 @@ RSpec.describe Recipe, type: :model do
     end
 
     it 'Should have a valid quantity' do
-      expect(@recipe.description).to eq("Steps to make great Lasagna")
+      expect(@recipe.description).to eq('Steps to make great Lasagna')
     end
 
     it 'Recipe should have a user' do
