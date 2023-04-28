@@ -8,17 +8,17 @@
     </div>
 
     <div class="col-md-6">
-      <%= form.label :preparation_time, class: "form-label" %>
+      <%= form.label :preparation_time, "Preparation time (min.)", class: "form-label" %>
       <%= form.number_field :preparation_time, min: 0, class: "form-control", required: true %>
     </div>
 
     <div class="col-md-6">
-      <%= form.label :cooking_time, class: "form-label" %>
+      <%= form.label :cooking_time, "Cooking time (min.)", class: "form-label" %>
       <%= form.number_field :cooking_time, min: 0, class: "form-control", required: true %>
     </div>
 
     <div class="col-md-12">
-      <%= form.label :description, class: "form-label" %>
+      <%= form.label :description, "Description and Steps go here:", class: "form-label" %>
       <%= form.text_area :description, class: "form-control", required: true %>
     </div>
 
