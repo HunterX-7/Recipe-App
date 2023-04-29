@@ -2,7 +2,7 @@
   <h1 class="display-5">Public Recipes</h1>
   <ul class="list-group">
     <% @recipes.each do |recipe| %>
-      <li class="list-group-item d-flex justify-content-between">
+      <li class="list-group-item d-flex justify-content-between rounded border border-3 border-success">
         <div class="col-4">
           <%= link_to recipe.name, recipe_path(recipe.id), class: "text-decoration-none text-dark fw-bold me-3" %>
           <p class="mb-0">By: <%= recipe.user.name %></p>
@@ -16,6 +16,7 @@
           <% end %>
         </div>
       </li>
+      <br>
     <% end %>
   </ul>
 </div>
