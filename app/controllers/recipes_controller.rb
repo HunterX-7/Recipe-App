@@ -38,7 +38,13 @@ class RecipesController < ApplicationController
 
   def public_recipes
     @recipes = Recipe.includes(:user).where(public: true)
+  
+    @shopping_lists = {}
+    @recipes.each do |recipe|
+      @shopping_lists[recipe.id] = generate_shopping_list(recipe)
+    end
   end
+  
 
   def toggle_public
     @recipe = Recipe.find(params[:id])
@@ -48,29 +54,34 @@ class RecipesController < ApplicationController
 
   def shopping_list
     @recipe = Recipe.find(params[:id])
-    @recipe_foods = RecipeFood.where(recipe_id: @recipe.id)
+    @shopping_list, @total_items, @total_price = generate_shopping_list(@recipe)
+    render 'shopping_lists/index'
+  end
 
-    @shopping_list = {}
-    @total_items = 0
-    @total_price = 0
+  def generate_shopping_list(recipe)
+    recipe_foods = RecipeFood.where(recipe: recipe)
 
-    @recipe_foods.each do |recipe_food|
+    shopping_list = {}
+    total_items = 0
+    total_price = 0
+
+    recipe_foods.each do |recipe_food|
       food = Food.find(recipe_food.food_id)
       quantity = recipe_food.quantity
       measurement_unit = food.measurement_unit
 
-      if @shopping_list[food.name].nil?
-        @shopping_list[food.name] =
-          { quantity:, measurement_unit:, price: food.price * quantity, name: food.name }
+      if shopping_list[food.name].nil?
+        shopping_list[food.name] = { quantity: quantity, measurement_unit: measurement_unit, price: food.price * quantity, name: food.name }
       else
-        @shopping_list[food.name][:quantity] += quantity
-        @shopping_list[food.name][:price] += food.price * quantity
+        shopping_list[food.name][:quantity] += quantity
+        shopping_list[food.name][:price] += food.price * quantity
       end
 
-      @total_items += quantity
-      @total_price += food.price * quantity
+      total_items += quantity
+      total_price += food.price * quantity
     end
-    render 'shopping_lists/index'
+
+    return shopping_list, total_items, total_price
   end
 
   def recipe_params
