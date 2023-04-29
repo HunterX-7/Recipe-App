@@ -148,6 +148,12 @@ To run the integration tests:
 - Twitter: [@franquin07](https://twitter.com/franquin07)
 - LinkedIn: [Francisco Quintero](https://www.linkedin.com/in/francisco-asis-quintero-cede%C3%B1o/)
 
+👤 **Davian Beroni**
+
+- GitHub: [dadadon](https://github.com/dadadon)
+- Twitter: [Davian Beroni](https://twitter.com/davianberoni)
+- LinkedIn: [Davian Beroni](https://www.linkedin.com/in/davian-beroni/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
