@@ -7,6 +7,7 @@
     <p>Total items: <%= shopping_list.size %></p>
   <p>Total price: <%= total_price %></p>
       <li class="list-group-item d-flex justify-content-between">
+      <li class="list-group-item d-flex justify-content-between rounded border border-3 border-success">
         <div class="col-4">
           <%= link_to recipe.name, recipe_path(recipe.id), class: "text-decoration-none text-dark fw-bold me-3" %>
           <p class="mb-0">By: <%= recipe.user.name %></p>
@@ -20,6 +21,7 @@
           <% end %>
         </div>
       </li>
+      <br>
     <% end %>
   </ul>
 </div>
