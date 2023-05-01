@@ -136,12 +136,6 @@ To run the integration tests:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Davian Beroni**
-
-- GitHub: [dadadon](https://github.com/dadadon)
-- Twitter: [Davian Beroni](https://twitter.com/davianberoni)
-- LinkedIn: [Davian Beroni](https://www.linkedin.com/in/davian-beroni-502351b7/)
-
 👤 **Francisco Quintero**
 
 - GitHub: [@HunterX-7](https://github.com/HunterX-7)
