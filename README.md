@@ -27,9 +27,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 The Recipe App <a name="about-project"></a>
 
-**Recipe App** With the Recipe app, you can easily manage your recipes, ingredients, and pantry. It enables you to save ingredients, monitor your stock, devise new recipes, and generate a shopping list based on what you need to complete a recipe. The app recognizes the significance of sharing recipes and therefore lets you make them public for everyone to access.
+With the **Recipe App**, you can easily manage your recipes, ingredients, and pantry. It enables you to save ingredients, monitor your stock, devise new recipes, and generate a shopping list based on what you need to complete a recipe. The app recognizes the significance of sharing recipes and therefore lets you make them public for everyone to access.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -102,23 +102,34 @@ cd Recipe-App
 
 ### Usage
 
+It is require that you setup your database to run this project, check the config/database.yml and make sure that the username and password match you postgresql setup, then run:
+
+```console
+rails db:create
+```
+
+```console
+rails db:migrate
+```
+
 To run the project, execute the following command in the project directory:
 
 ```console
 rails server
 ```
 
-To run test, execute the following command in the project directory:
+To run test, execute the following commands in the project directory.
 
-```console
-rspec spec
-```
+To run the unit tests:
 
-To view the API documentation, check the following URL:
+  ```console
+  rspec ./spec/models 
+  ```
+To run the integration tests:
 
-```console
-http://localhost:3000/api-docs/
-```
+  ```console
+  rspec ./spec/views
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,6 +141,12 @@ http://localhost:3000/api-docs/
 - GitHub: [@HunterX-7](https://github.com/HunterX-7)
 - Twitter: [@franquin07](https://twitter.com/franquin07)
 - LinkedIn: [Francisco Quintero](https://www.linkedin.com/in/francisco-asis-quintero-cede%C3%B1o/)
+
+👤 **Davian Beroni**
+
+- GitHub: [dadadon](https://github.com/dadadon)
+- Twitter: [Davian Beroni](https://twitter.com/davianberoni)
+- LinkedIn: [Davian Beroni](https://www.linkedin.com/in/davian-beroni/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
